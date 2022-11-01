@@ -79,4 +79,12 @@ class HashMap
     # optional but useful; return the bucket corresponding to `key`
     @store[key.hash % num_buckets]
   end
+
+  def inspect
+    res = []
+    @store.each do |b|
+      b.each {|el| res << el} 
+    end
+    res
+  end
 end
